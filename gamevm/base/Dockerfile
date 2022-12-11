@@ -43,8 +43,6 @@ RUN npm install
 #
 # build client
 COPY client/ .
-# TODO: work on prod deployment
-RUN npm run dev 
 
 #
 # STAGE 3: RUNTIME
