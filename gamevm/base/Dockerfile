@@ -1,7 +1,7 @@
 #
 # STAGE 1: SERVER
 #
-FROM golang:1.18-bullseye as server
+FROM golang:1.19-bullseye as server
 WORKDIR /src
 
 #
@@ -26,23 +26,23 @@ RUN set -eux; apt-get update; \
 
 #
 # build server
-COPY server/ .
+COPY engine/server/ .
 RUN go get -v -t -d . && go build -o bin/neko cmd/neko/main.go
 
 #
 # STAGE 2: CLIENT
 #
-FROM node:14-bullseye-slim as client
+FROM node:18-bullseye-slim as client
 WORKDIR /src
 
 #
 # install dependencies
-COPY client/package*.json ./
+COPY engine/client/package*.json ./
 RUN npm install
 
 #
 # build client
-COPY client/ .
+COPY engine/client/ .
 RUN npm run build
 
 #

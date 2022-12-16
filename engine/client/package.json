@@ -1,0 +1,23 @@
+{
+  "name": "play-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "@types/react-native": "^0.70.7",
+    "babel-plugin-react-native-web": "^0.18.10",
+    "next": "13.0.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native-web": "^0.18.10",
+    "typescript": "4.9.3"
+  }
+}
